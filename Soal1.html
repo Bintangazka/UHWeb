@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // Membuat array kendaraan
+let kendaraan = [
+  // Kendaraan di darat
+  "Mobil",
+  "Motor",
+  "Sepeda",
+  "Truk",
+  "Bus",
+
+  // Kendaraan di laut
+  "Kapal",
+  "Perahu",
+  "Jet Ski",
+
+  // Kendaraan di udara
+  "Pesawat",
+  "Helikopter",
+
+];
+
+// Menampilkan seluruh data array
+console.log("Seluruh data kendaraan:");
+console.log(kendaraan);
+
+// Mengakses nilai value dari kendaraan "mobil" pada indeks ke berapa
+let indeksMobil = kendaraan.indexOf("Mobil");
+console.log("\nIndeks kendaraan 'Mobil':", indeksMobil);
+
+// Menghapus satu data kendaraan dengan cara unshift
+let kendaraanYangDihapus = kendaraan.shift();
+console.log("\nData kendaraan yang dihapus:", kendaraanYangDihapus);
+console.log("Data kendaraan setelah dihapus:");
+console.log(kendaraan);
+
+</script>
+</html>

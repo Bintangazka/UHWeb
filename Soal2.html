@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perulangan dengan Input Pengguna</title>
+</head>
+<body>
+
+  <label for="jumlahPerulangan">Jumlah Perulangan:</label>
+  <input type="text" id="jumlahPerulangan" placeholder="Masukkan jumlah perulangan">
+
+  <button onclick="tampilkanKalimat()">Tampilkan Kalimat</button>
+
+  <script>
+    function tampilkanKalimat() {
+      // Mendapatkan nilai input dari pengguna
+      var jumlahPerulangan = document.getElementById('jumlahPerulangan').value;
+
+      // Mengonversi nilai input menjadi angka
+      jumlahPerulangan = parseInt(jumlahPerulangan);
+
+      // Memastikan input adalah angka dan tidak kosong
+      if (!isNaN(jumlahPerulangan) && jumlahPerulangan > 0) {
+        // Menampilkan kalimat sesuai jumlah perulangan
+        for (var i = 0; i < jumlahPerulangan; i++) {
+          // Menampilkan kalimat ke dalam elemen dengan id "output"
+          var kalimat = document.createElement("p");
+          kalimat.textContent = "Saya orang yang sabar, ramah dan tidak membenci orang";
+          document.body.appendChild(kalimat);
+        }
+      } else {
+        alert("Masukkan jumlah perulangan yang valid");
+      }
+    }
+  </script>
+
+</body>
+</html>

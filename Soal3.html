@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daftar Makanan dan Minuman</title>
+</head>
+<body>
+
+  <label for="kategori">Pilih Kategori:</label>
+  <select id="kategori">
+    <option value="">Pilih Kategori</option>
+    <option value="makanan">Makanan</option>
+    <option value="minuman">Minuman</option>
+  </select>
+
+  <button onclick="tampilkanDaftar()">Tampilkan Daftar</button>
+
+  <div id="output"></div>
+
+  <script>
+    function tampilkanDaftar() {
+      // Mendapatkan nilai pilihan kategori dari pengguna
+      var kategori = document.getElementById('kategori').value;
+
+      // Daftar makanan
+      var daftarMakanan = ["Bakso", "Mie Ayam", "Soto", "Kambing Guling", "Ayam Bakar", "Sate", "Mie Goreng", "Mendoan"];
+
+      // Daftar minuman
+      var daftarMinuman = ["Es Milo", "Es Teh Manis", "Es Jeruk", "Es Campur", "Es Kopi Susu", "Es Teh Tawar", "Es Dawet"];
+
+      // Elemen output untuk menampilkan hasil
+      var outputElement = document.getElementById('output');
+
+      // Membersihkan isi output sebelum menampilkan yang baru
+      outputElement.innerHTML = "";
+
+      // Memeriksa kategori yang dipilih oleh pengguna
+      if (kategori === "makanan") {
+        // Menampilkan daftar makanan
+        for (var i = 0; i < daftarMakanan.length; i++) {
+          var item = document.createElement("p");
+          item.textContent = daftarMakanan[i];
+          outputElement.appendChild(item);
+        }
+      } else if (kategori === "minuman") {
+        // Menampilkan daftar minuman
+        for (var j = 0; j < daftarMinuman.length; j++) {
+          var item = document.createElement("p");
+          item.textContent = daftarMinuman[j];
+          outputElement.appendChild(item);
+        }
+      } else {
+        // Menampilkan pesan jika kategori tidak valid
+        var pesanError = document.createElement("p");
+        pesanError.textContent = "Pilihan tidak valid. Silahkan pilih menu yang benar.";
+        outputElement.appendChild(pesanError);
+      }
+    }
+  </script>
+
+</body>
+</html>
